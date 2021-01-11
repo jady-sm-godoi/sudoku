@@ -6,6 +6,7 @@
       :list="lists[0]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="1"
@@ -13,6 +14,7 @@
       :list="lists[1]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="2"
@@ -20,6 +22,7 @@
       :list="lists[2]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="3"
@@ -27,6 +30,7 @@
       :list="lists[3]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="4"
@@ -34,6 +38,7 @@
       :list="lists[4]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="5"
@@ -41,6 +46,7 @@
       :list="lists[5]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="6"
@@ -48,6 +54,7 @@
       :list="lists[6]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="7"
@@ -55,6 +62,7 @@
       :list="lists[7]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
     <game-line
       index="8"
@@ -62,6 +70,7 @@
       :list="lists[8]"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
   </div>
 </template>
@@ -75,7 +84,11 @@ export default {
     verifiedNumber(list, pos, num) {
       this.$emit("verifiedNumber", list, pos, num);
     },
+    mistake() {
+      this.$emit("mistake");
+    },
   },
+  emits: ["verifiedNumber", "mistake"],
 };
 </script>
 

@@ -18,11 +18,12 @@ export default {
         this.$emit("verifiedNumber", this.cell);
         console.log("o número combina");
       } else {
+        this.$emit("mistake");
         console.log("não combina");
       }
     },
   },
-  emits: ["verifiedNumber"],
+  emits: ["verifiedNumber", "mistake"],
 };
 </script>
 

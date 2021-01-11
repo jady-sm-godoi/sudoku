@@ -6,6 +6,7 @@
       :lists="lists"
       :selectedNumber="selectedNumber"
       @verifiedNumber="verifiedNumber"
+      @mistake="mistake"
     />
   </div>
   <select-number @setNumber="setNumber" />
@@ -43,6 +44,7 @@ export default {
       playerLists: playerGame,
       lists: game,
       selectedNumber: null,
+      chances: 3,
     };
   },
   methods: {
@@ -52,6 +54,10 @@ export default {
     verifiedNumber(list, pos, num) {
       this.playerLists[list][pos] = num;
       console.log("chegou aqui", list, pos, num);
+    },
+    mistake() {
+      this.chances--;
+      console.log(this.chances);
     },
   },
 };
